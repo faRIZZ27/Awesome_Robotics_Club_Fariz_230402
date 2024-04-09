@@ -8,7 +8,7 @@ This Python script simulates the inverse kinematics of a robotic arm using the F
 ## Assumptions
 1. The base joint is at the origin (0,0,0)
 
-2. I have assumed that the joints can only rotate in the x-y plane. Thus I have eliminated the z-coordinate of the target position assuming it to be zero.
+2. I have assumed that the joints can only rotate about the z-axis and the links will only move in the x-y plane. Thus I have eliminated the z-coordinate of the target position assuming it to be zero.
 
 3. I have taken tolerance value for fabrik algorithm to be 0.1 . The tolerance value can be adjusted depending on whether we want greater accuracy or time efficiency.
 <br>
@@ -34,7 +34,7 @@ Provides methods to calculate joint angles, joint positions, check reachability,
    It returns true if the distance of target from base joint(origin) is less or equal to the sum of link lenghts (40 in this case), otherwise returns false.
 
 4. ### fabrik():-
-       It is a recursive function that applies the fabrik theorem . The base condition is the comparision of the distance between end-effector and the target position. If it is less than the tolerance value the function ends.
+   It is a recursive function that applies the fabrik theorem . The base condition is the comparision of the distance between end-effector and the target position. If it is less than the tolerance value the function ends.
        In each iteration/recursive call the function calls forward_pass() and updates the joint coordinates and then passes the updated points in the backward_pass() function to get the final coordinates after each iteration.
        The function calls the get_angles() function to get the joint angles and prints it.
 
