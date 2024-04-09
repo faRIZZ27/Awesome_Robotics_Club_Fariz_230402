@@ -96,7 +96,6 @@ class RoboticArm:
 
         #getting joint angles by passing points as argument
         joint_angles=self.get_angles(points)
-        print("The points after iteration no-{} are: {}, {}, {}".format(int(count), list(points[1]),list(points[2]),list(points[3])))
         print("The joint angles after iteration no-{} are: {}, {}, {}".format(int(count), 180/np.pi*float(joint_angles[0]), 180/np.pi*float(joint_angles[1]), 180/np.pi*float(joint_angles[2])))
             
         #recursively calling the fabrik function
